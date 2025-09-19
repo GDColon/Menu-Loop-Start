@@ -1,0 +1,45 @@
+{
+	"geode": "4.8.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "colon.menu_loop_start_time",
+	"name": "Menu Loop Start Time",
+	"version": "v1.0.0",
+	"developer": "Colon",
+	"description": "Start your menu loop from a specificed point",
+	"tags": ["customization", "music"],
+	"links": { "source": "https://github.com/GDColon/Menu-Loop-Start" },
+
+	"settings": {
+		"enable": { "type": "bool",  "name": "Enable",  "default": true, "description": "Enables the custom start time" },
+
+		"pt0": { "type": "float", "name": "Start time (secs)", "default": 0, "min": 0, "description": "The start time for your menu loop, in seconds.", "enable-if": "!chaos" },
+		"preview": { "type": "custom:preview", "name": "Preview", "description": "Preview the menu loop.\n\n<cy>Make sure to apply your changes first!</c>" },
+
+		"noFirst": { "type": "bool",  "name": "Ignore on Startup", "default": false, "description": "Don't use the custom start time for the first menu loop (when launching the game)" },
+		"chaos": { "type": "bool",  "name": "Chaos Mode", "default": false, "description": "Picks a completely random point in the song and starts the menu loop from there" },
+		
+		"randomLabel": { "type": "title", "name": "Random Points", "description": "In addition to the start time above, these points can also be randomly selected.\n\n<cy>Values set to 0 are ignored. Set the Start Time setting to 0 if you want a chance to start from there.</c>" },
+			
+		"pt1":  { "type": "float", "name": "Random Point 1",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt2":  { "type": "float", "name": "Random Point 2",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt3":  { "type": "float", "name": "Random Point 3",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt4":  { "type": "float", "name": "Random Point 4",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt5":  { "type": "float", "name": "Random Point 5",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt6":  { "type": "float", "name": "Random Point 6",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt7":  { "type": "float", "name": "Random Point 7",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt8":  { "type": "float", "name": "Random Point 8",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt9":  { "type": "float", "name": "Random Point 9",  "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt10": { "type": "float", "name": "Random Point 10", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt11": { "type": "float", "name": "Random Point 11", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt12": { "type": "float", "name": "Random Point 12", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt13": { "type": "float", "name": "Random Point 13", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt14": { "type": "float", "name": "Random Point 14", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt15": { "type": "float", "name": "Random Point 15", "default": 0, "min": 0, "enable-if": "!chaos" },
+		"pt16": { "type": "float", "name": "Random Point 16", "default": 0, "min": 0, "enable-if": "!chaos", "description": "i'm such a good programmer" }
+	}
+}
