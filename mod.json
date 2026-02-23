@@ -1,14 +1,14 @@
 {
-	"geode": "4.8.0",
+	"geode": "5.0.0",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "colon.menu_loop_start_time",
 	"name": "Menu Loop Start Time",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "Colon",
 	"description": "Start your menu loop from a specificed point",
 	"tags": ["customization", "music"],

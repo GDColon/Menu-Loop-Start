@@ -80,7 +80,7 @@ $on_mod(Loaded) {
 	if (Mod::get()->getSettingValue<bool>("noFirst")) first = true;
 
 	// this runs multiple times for each setting changed, we only need to do it once
-	geode::listenForAllSettingChanges([](auto) {
+	geode::listenForAllSettingChanges([](auto, auto) {
 		if (!setup) {
 			setup = true;
 			geode::queueInMainThread(onSetupComplete);
