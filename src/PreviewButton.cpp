@@ -59,7 +59,6 @@ protected:
     }
 
     void onButton(CCObject*) {
-        log::info("clicky");
         FMODAudioEngine::sharedEngine()->stopAndRemoveMusic(0);
         GameManager::get()->fadeInMenuMusic();
     }
