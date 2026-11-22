@@ -16,7 +16,7 @@ public:
         res->init(key, modID, root);
         res->parseNameAndDescription(root);
         res->parseEnableIf(root);
-        
+
         root.checkUnknownKeys();
         return root.ok(std::static_pointer_cast<SettingV3>(res));
     }
@@ -35,30 +35,31 @@ public:
 class PreviewButton : public SettingNodeV3 {
 protected:
     ButtonSprite* m_buttonSprite;
-    CCMenuItemSpriteExtra* m_button;
+    geode::Button* m_button;
 
     bool init(std::shared_ptr<PreviewButtonSetting> setting, float width) {
         if (!SettingNodeV3::init(setting, width))
             return false;
-    
+
         // Button is created here
         m_buttonSprite = ButtonSprite::create("Click to preview!", "goldFont.fnt", "geode.loader/GE_button_05.png", .8f);
         m_buttonSprite->setScale(0.6f);
-        m_button = CCMenuItemSpriteExtra::create(
-            m_buttonSprite, this, menu_selector(PreviewButton::onButton)
-        );
+        m_button = geode::Button::createWithNode(m_buttonSprite, [this](geode::Button*) {
+            this->onButton(nullptr);
+        });
         this->getButtonMenu()->addChildAtPosition(m_button, Anchor::Center);
         this->getButtonMenu()->setContentWidth(120);
         this->getButtonMenu()->updateLayout();
         this->updateState(nullptr);
         return true;
     }
-    
+
     void updateState(CCNode* invoker) override {
         SettingNodeV3::updateState(invoker);
     }
 
     void onButton(CCObject*) {
+        log::info("clicky");
         FMODAudioEngine::sharedEngine()->stopAndRemoveMusic(0);
         GameManager::get()->fadeInMenuMusic();
     }
