@@ -86,4 +86,13 @@ $on_mod(Loaded) {
 			geode::queueInMainThread(onSetupComplete);
 		}
 	});
+
+	//preview button in settings menu
+	ButtonSettingPressedEventV3(Mod::get(), "preview").listen([] (auto buttonKey) {
+		if (buttonKey == "btn-preview") {
+			FMODAudioEngine::sharedEngine()->stopAndRemoveMusic(0);
+			GameManager::get()->fadeInMenuMusic();
+		}
+	}).leak();
+
 }

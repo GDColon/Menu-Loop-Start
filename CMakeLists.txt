@@ -14,7 +14,6 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
-    src/PreviewButton.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
